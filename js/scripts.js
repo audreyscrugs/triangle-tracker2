@@ -15,3 +15,19 @@ var triangleType = function(side1, side2, side3){
       return "This is a scalene triangle.";
     }
 };
+
+$(document).ready(function(){
+  $("form#blanks").submit(function(event){
+
+    var side1 = parseInt($("input#side1").val());
+    var side2 = parseInt($("input#side2").val());
+    var side3 = parseInt($("input#side3").val());
+    var result = isTriangle(side1, side2, side3);
+
+    $("#display").show(triangleType);
+
+    event.preventDefault();
+
+  });
+
+})
